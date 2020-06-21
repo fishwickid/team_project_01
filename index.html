@@ -20,7 +20,7 @@
       <ul class="dropdown menu" data-dropdown-menu>
         <li class="menu-text">Wine 2 Dine</li>
         <li>
-          <a href="#">Home</a>
+          <a href="#">Register</a>
         </li>
         <li><a href="news.html">Wine News</a></li>
         <li><a href="quiz.html">Help us pick your wine</a></li>
@@ -34,64 +34,75 @@
     </div>
   </div>
 
-  <div class="media-object">
-    <div class="media-object-section middle">
-      <div class="thumbnail">
-        <img src= "./Assets/picture1.jpg">
-      </div>
-    </div>
-    <div class="media-object-section">
-      <h4>USER STORY</h4>
-      <p>So, once we've made the plant, how do we go out? Hope you have something more elegant in mind than shooting me in the head? A kick. What's a kick? This, Ariadne, would be a kick.</p>
-      <p>What is the most resilient parasite? Bacteria? A virus? An intestinal worm? An idea. Resilient... highly contagious. Once an idea has taken hold of the brain it's almost impossible to eradicate. An idea that is fully formed - fully understood - that sticks; right in there somewhere.</p>
-    </div>
-    <div class="media-object-section bottom">
-      <div class="thumbnail">
-        <img src= "./Assets/picture2.jpg">
-      </div>
-    </div>
-  </div>
-
-
   <div class="grid-container">
     <div class="grid-x grid-margin-x small-up-2 medium-up-3">
       <div class="cell">
         <div class="card">
-          <img src="Assets/top.jpg">
-          <div class="card-section">
-          <h4>Top wines</h4>
-          <p>1st wine</p>
-          <p>2nd wine</p>
-          <p>3rd wine</p>
-          <p>4th wine</p>
-          <p>5th wine</p>
-          </div>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="card">
-          <img src="assets/location.JPG">
-          <div class="card-section">
-            <h4>Find nearest bottleshop</h4>
-            <p> LOCATION API WILL GO HERE</p>
-          </div>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="card">
-          <img src="Assets/review.jpg">
-          <div class="card-section">
-            <h4>Customer reviews</h4>
-            <p>1st review</p>
-            <p>2nd review</p>
-            <p>3rd review</p>
-            <p>4th review</p>
-            <p>5th review</p>
-          </div>
+          <form>
+            <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                <div class="medium-6 cell">
+                  <label>First name
+                    <input type="text" placeholder="First name">
+                  </label>
+                </div>
+                <div class="medium-6 cell">
+                  <label>Last name
+                    <input type="text" placeholder="Last name">
+                  </label>
+                </div>
+              </div>
+                 <div class="grid-x grid-padding-x">
+                <div class="medium-6 cell">
+                  <label>Login
+                    <input type="text" placeholder="Login">
+                  </label>
+                </div>
+                <div class="medium-6 cell">
+                  <label>Password
+                    <input type="password" placeholder="Password">
+                  </label>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x">
+                <div class="medium-6 cell">
+                  <label>
+                    How old are you ?
+                    <input type="number" value="30">
+                  </label>
+                </div>
+                <div class="medium-6 cell">
+                  <label>What's your gender?
+                    <select>
+                      <option value="husker">Female</option>
+                      <option value="starbuck">Male</option>
+                      <option value="hotdog">Other</option>
+                    </select>
+                  </label>
+                </div>
+                <div class="medium-12 cell">
+                  <label>Email Adress
+                    <input type="email" placeholder="someone@example.com">
+                  </label>
+                </div>
+                <div class="small-12 cell">
+                <fieldset id="tandc" class="fieldset">
+                  <div class=>
+                  <legend>I understand and agree to Privacy Policy and terms of Service</legend>
+                  <input id="checkbox12" type="checkbox"><label for="checkbox12"></label>
+                </fieldset>
+                </div>
+                  <div  class="small-6 cell">
+                    <input id="createUser" type="submit" class="button" value="Create my user">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </div>
+ 
   
 
 

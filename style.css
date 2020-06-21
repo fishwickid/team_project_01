@@ -17,4 +17,22 @@ h4 {
 
     color: brown;
     text-align: center;
+
+}
+#tandc {
+    margin: 0.125rem 0;
+    padding: 0.25rem;
+    border: 1px solid #cacaca;
+}
+
+#createUser {
+
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+
+   
+
 }
