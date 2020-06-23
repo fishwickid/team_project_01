@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wine2Dine</title>
 
-    <!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-
 <link rel ="stylesheet" href="style.css">
 
-<!-- Compressed JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+
+<!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
 
@@ -33,83 +34,86 @@
       </ul>
     </div>
   </div>
+<div class= "container"> 
 
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-      <div class="cell">
-        <div class="card">
-          <form>
-            <div class="grid-container">
-              <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
-                  <label>First name
-                    <input type="text" placeholder="First name">
-                  </label>
-                </div>
-                <div class="medium-6 cell">
-                  <label>Last name
-                    <input type="text" placeholder="Last name">
-                  </label>
-                </div>
-              </div>
-                 <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
-                  <label>Login
-                    <input type="text" placeholder="Login">
-                  </label>
-                </div>
-                <div class="medium-6 cell">
-                  <label>Password
-                    <input type="password" placeholder="Password">
-                  </label>
-                </div>
-              </div>
-              <div class="grid-x grid-padding-x">
-                <div class="medium-6 cell">
-                  <label>
-                    How old are you ?
-                    <input type="number" value="30">
-                  </label>
-                </div>
-                <div class="medium-6 cell">
-                  <label>What's your gender?
-                    <select>
-                      <option value="husker">Female</option>
-                      <option value="starbuck">Male</option>
-                      <option value="hotdog">Other</option>
-                    </select>
-                  </label>
-                </div>
-                <div class="medium-12 cell">
-                  <label>Email Adress
-                    <input type="email" placeholder="someone@example.com">
-                  </label>
-                </div>
-                <div class="small-12 cell">
-                <fieldset id="tandc" class="fieldset">
-                  <div class=>
-                  <legend>I understand and agree to Privacy Policy and terms of Service</legend>
-                  <input id="checkbox12" type="checkbox"><label for="checkbox12"></label>
-                </fieldset>
-                </div>
-                  <div  class="small-6 cell">
-                    <input id="createUser" type="submit" class="button" value="Create my user">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
+  <div class="row">
+    <div class="columns small-8"></div>
+
+    <form id="save-later-form">
+      <h3>Register your details</h3>
+      <label for="full-name">Full Name</label>
+      <input type="text" name="full-name" id="full-name" />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" />
+      <label for="phone">Phone Number</label>
+      <input type="tel" name="phone" id="phone" maxlength="11" />
+      <label for="dob">Date Of Birth</label>
+      <input type="date" name="dob" id="dob" />
+      <label for="security">Security Question</label>
+      <select name="security" id="security" tabindex="0">
+        <option value="">Select a question</option>
+        <option value="best-friend">What's your best friend's name?</option>
+        <option value="pet">What's the name of your first pet?</option>
+        <option value="spouse">Where did you meet your spouse?</option>
+      </select>
+      <label for="security-answer">Answer</label>
+      <input type="text" name="security-answer" id="security-answer" />
+      <label for="description">Description</label>
+      <textarea
+        name="description"
+        id="description"
+        placeholder="Describe yourself in 100 words (max)"
+      ></textarea>
+      <button type="submit" id="submit">SUBMIT</button>
+      <button type="submit" id="save">SAVE</button>
+    </form>
+
+  </div>
+
+  <div class="container">
+    <div class="columns small-8">
+
+    <table id="restaurantList">
+      <thead>
+        <tr>
+          <th width="200">Restaurant Names</th>
+          <th>Restaurant Profile</th>
+          <th width="150">BYO</th>
+          <th width="150">Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="restaurantOption1">
+          <td id=RestaurantOption1Name></td>
+          <td id=RestaurantOption1Profile></td>
+          <td id=RestaurantOption1Byo></td>
+          <td id="RestaurantOption1Location"></td>
+        </tr>
+        <tr>
+          <td>Content Goes Here</td>
+          <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+          <td>Content Goes Here</td>
+          <td>Content Goes Here</td>
+        </tr>
+        <tr>
+          <td>Content Goes Here</td>
+          <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+          <td>Content Goes Here</td>
+          <td>Content Goes Here</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </div> 
+          
         </div>
       </div>
     </div>
  
-  
-
-
-
-
-        <!-- Compressed JavaScript -->
+<!-- Compressed JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+
 
 <script src="script.js"></script>
     
