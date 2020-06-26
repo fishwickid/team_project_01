@@ -9,67 +9,67 @@ function startQuiz() {
   document.getElementById("quiz").style.display = "block";
   console.log("quiz started");
   document.getElementById("wineQuestion").html = "hello";
-  $("#wineQuestion").html("<p>What type of wine are you in the mood for  " + userName.val() + "</p>");
+  $("#wineQuestion").html("<p>Pick what kind of cuisine you in the mood for " + userName.val() + " and we will pop out a wine suggestion! </p>");
   renderQuestion();
 };
-
 
 function renderQuestion() {
   // Event listener for our cat-button
   $("#barbequeButton").on("click", function () {
-    $("#displayFood").html("<p>You chose barbeque</p>");
+    $("#displayFood").html("<strong>Red: Malbec <br></strong>An affordable Argentinian Malbec will do a good job of standing up to the sweet BBQ heat. You can try a Rhone blend if you want to shell out a few more bucks.<p></p><strong>White: Rose</strong><br>It's not a white wine, but rosé will give you the crisp, cool flavors you're looking for while standing up to the fat and smokiness of the meat.");
     $("#cuisine-ID").val("barbeque");
+    document.getElementById("btnSearch").style.display = "block";
   });
 
   $("#burgerButton").on("click", function () {
-    $("#displayFood").html("<p>You chose burgers</p>");
+    $("#displayFood").html("<strong>Red: Cabernet Sauvignon<br></strong>An affordable Argentinian Malbec will do a good job of standing up to the sweet BBQ heat. You can try a Rhone blend if you want to shell out a few more bucks.<p></p><strong>White: Oaked Chardonnay</strong><br>If you're going white here, you need a powerful white wine that can handle the meatiness of the burger. That's a classic Margaret River Chardonnay.");
     $("#cuisine-ID").val("burgers");
+    document.getElementById("btnSearch").style.display = "block";
   });
 
   $("#chineseButton").on("click", function () {
-    $("#displayFood").html("<p>You chose Chinese</p>");
+    $("#displayFood").html("<strong>Red: Blaufränkisch<br></strong>This wine can handle the saltiness of soy sauce due to its fruity flavors. For sweet, peppery heat (e.g. General Tso's Chicken) go with a Gamay.<p></p><strong>White: German Riesling</strong><br>The semi-sweetness of the wine tempers the spice of the food perfectly.");
     $("#cuisine-ID").val("chinese");
+    document.getElementById("btnSearch").style.display = "block";
   });
 
   $("#friedFoodButton").on("click", function () {
-    $("#displayFood").html("<p>You chose fried food</p>");
+    $("#displayFood").html("<strong>Red: Lambrusco <br></strong>This classic sparkling Italian red goes perfectly with salty fried foods<p></p><strong>White: Champagne</strong><br>Sparkling wines go well with salty fried foods, especially fast-food fried chicken.");
     $("#cuisine-ID").val("fried food");
+    document.getElementById("btnSearch").style.display = "block";
   });
 
   $("#indianButton").on("click", function () {
-    $("#displayFood").html("<p>You chose Indian</p>");
+    $("#displayFood").html("<strong>Red: Syrah<br></strong>A Syrah stands up well to classic Indian curries and cream sauces. It also cuts through the spice.<p></p><strong>White: German Riesling</strong><br>The semi-sweetness of the wine tempers the spice of the food perfectly.");
     $("#cuisine-ID").val("indian");
+    document.getElementById("btnSearch").style.display = "block";
   });
 
   $("#italianButton").on("click", function () {
-    $("#displayFood").html("<p>You chose Italian</p>");
+    $("#displayFood").html("<strong>Red: Chianti<br></strong>It's the red sauce classic, plus it's dry enough to go well with the depth of flavor of the tomato sauce, especially if the sauce includes meat.<p></p><strong>White: Pinot Grigio</strong><br>While a red wine is the better pairing here, this white wine is the best for standing up to classic red sauce flavors.");
     $("#cuisine-ID").val("italian");
+    document.getElementById("btnSearch").style.display = "block";
   });
 
   $("#pizzaButton").on("click", function () {
-    $("#displayFood").html("<p>You chose Pizza</p>");
+    $("#displayFood").html("<strong>Red: Barbera<br></strong>It's the red sauce classic, plus it's dry enough to go well with the depth of flavor of the tomato sauce, especially if the sauce includes meat.<p></p><strong>White: Grüner Veltliner</strong><br>The acidity and bright flavors go well with many pizza pies, but especially those with veggie toppings or white sauces.");
     $("#cuisine-ID").val("Pizza");
+    document.getElementById("btnSearch").style.display = "block";
   });
 
   $("#sushiButton").on("click", function () {
-    $("#displayFood").html("<p>You chose Sushi</p>");
+    $("#displayFood").html("<strong>Red: Pinot Noir<br></strong>The earthiness, acidity and fruit flavors of this light red are a perfect match.<p></p><strong>White: Chenin Blanc</strong><br>This white wine is fantastic with fish. With some of the best stuff coming from South Africa it's also a bargain.");
     $("#cuisine-ID").val("sushi");
+    document.getElementById("btnSearch").style.display = "block";
+
   });
 
   $("#thaiButton").on("click", function () {
-    $("#displayFood").html("<p>You chose Thai</p>");
+    $("#displayFood").html("<strong>Red: Gamay<br></strong>To stand up to the spice, you want a light and fruity red wine and Gamay serves this purpose perfectly. Gamay is most commonly found in French Beaujolais.<p></p><strong>White: Gewürztraminer</strong><br>The sweet flavors and bright acidity cuts through the spice common in Thai dishes.");
     $("#cuisine-ID").val("Thai");
-  });
-  $("#redButton").on("click", function () {
-    $("#displayWine").html("<p>with red wine</p>")
     document.getElementById("btnSearch").style.display = "block";
-
   });
-  $("#whiteButton").on("click", function () {
-    $("#displayWine").html("<p>with white wine</p>");
-    document.getElementById("btnSearch").style.display = "block";
 
-  });
 };
 
 
