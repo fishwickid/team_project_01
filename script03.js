@@ -210,14 +210,6 @@ function userCuisineSearch() {
       headers: headers,
       complete: function (response) {
         $('#output').html(response.responseText);
-        // console.log(requestUrl);
-        // console.log(response.responseJSON);
-        // console.log(response.responseJSON.restaurants[0]);
-        // console.log(response.responseJSON.restaurants[0].restaurant.name);
-        // console.log(response.responseJSON.restaurants[0].restaurant.phone_numbers);
-        // console.log(response.responseJSON.restaurants[0].restaurant.location.address);
-        // console.log(response.responseJSON.restaurants[0].restaurant.timings);
-
         // also declare j = 1
         // this lets you use i to go through everything starting from the start, and use j to give them a unique number for id
         for (var i = 0, j = 1; i < response.responseJSON.restaurants.length; i++) {
