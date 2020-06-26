@@ -217,7 +217,7 @@ textarea {
   box-shadow: 0px 0px 2px 0px #212020;
 }
 
-#barbequeButton, #burgerButton, #chineseButton, #friedFoodButton, #indianButton, #italianButton, #pizzaButton, #sushiButton, #thaiButton, #redButton, #whiteButton { 
+#btnSearch, #barbequeButton, #burgerButton, #chineseButton, #friedFoodButton, #indianButton, #italianButton, #pizzaButton, #sushiButton, #thaiButton, #redButton, #whiteButton { 
   background-color: salmon;
   margin-bottom: 10px;
   padding-top: 10px;
@@ -229,29 +229,22 @@ textarea {
   text-align: center;
 }
 
+#search-recommended-restaurants {
+  display: inline-flex;
+  text-align: center;
+  color: white;
+}
+
 #foodButtons {
   text-align: center;
 }
 
-#wineButtons {
-  margin-top: 30px;
+#view-restaurants {
+
 }
 
-button {
-  color: white;
-  background-color: salmon;
-  font-size: 50px;
-  position: relative;
-  margin-bottom: 5px;
-  display: flex;
-  width: auto;
-  text-align: center;
-  border-radius: 5px;
-  padding : 5px;
-  text-align: center;
-  margin-left: 6rem;
-  margin-right: 6rem;
-  box-shadow: 0px 0px 2px 0px #212020;
+#wineButtons {
+  margin-top: 30px;
 }
 
 .choice:hover{
