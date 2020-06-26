@@ -1,6 +1,7 @@
-$("#start").on("click", startQuiz);
-
-
+$("#save").on("click", startQuiz);
+//collect user name from form to display
+var userName = $("#full-name");
+console.log(userName)
 // start quiz
 function startQuiz() {
   event.preventDefault()
@@ -8,10 +9,10 @@ function startQuiz() {
   document.getElementById("quiz").style.display = "block";
   console.log("quiz started");
   document.getElementById("wineQuestion").html = "hello";
-  $("#wineQuestion").html("<p>YWhat type of whine are you in the mood for Thibs</p>");
+  $("#wineQuestion").html("<p>What type of wine are you in the mood for  "+ userName.val() +"</p>");
   renderQuestion();
+};
 
-}
 
 function renderQuestion() {
   // Event listener for our cat-button
@@ -62,64 +63,76 @@ function renderQuestion() {
   $("#redButton").on("click", function () {
     $("#displayWine").html("<p>with red wine</p>")
     document.getElementById("btnSearch").style.display = "block";
-
-      ;
+    
   });
   $("#whiteButton").on("click", function () {
     $("#displayWine").html("<p>with white wine</p>");
     document.getElementById("btnSearch").style.display = "block";
+    
   });
 };
 
 
-//User form
-
-
 // form.js
-// const formId = "save-later-form"; // ID of the form
-// const url = location.href; //  href for the page
-// const formIdentifier = `${url} ${formId}`; // Identifier used to identify the form
-// const saveButton = document.querySelector("#save"); // select save button
-// const alertBox = document.querySelector(".alert"); // select alert display div
-// let form = document.querySelector(`#${formId}`); // select form
-// let formElements = form.elements; // get the elements in the form
-// /**
-//  * This function gets the values in the form
-//  * and returns them as an object with the
-//  * [formIdentifier] as the object key
-//  * @returns {Object}
-//  */
-// const getFormData = () => {
-//   let data = { [formIdentifier]: {} };
-//   for (const element of formElements) {
-//     if (element.name.length > 0) {
-//       data[formIdentifier][element.name] = element.value;
-//     }
-//   }
-//   return data;
-// };
-// saveButton.onclick = event => {
-//   event.preventDefault();
-//   data = getFormData();
-//   localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
-//   const message = "Form draft has been saved!";
-//   displayAlert(message);
-// };
-// /**
-//  * This function populates the form
-//  * with data from localStorage
-//  *
-//  */
-// const populateForm = () => {
-//   if (localStorage.key(formIdentifier)) {
-//     const savedData = JSON.parse(localStorage.getItem(formIdentifier)); // get and parse the saved data from localStorage
-//     for (const element of formElements) {
-//       if (element.name in savedData) {
-//         element.value = savedData[element.name];
-//       }
-//     }
-//   }
-// };
+const formId = "save-later-form"; // ID of the form
+const url = location.href; //  href for the page
+const formIdentifier = `${url} ${formId}`; // Identifier used to identify the form
+const saveButton = document.querySelector("#save"); // select save button
+const alertBox = document.querySelector(".alert"); // select alert display div
+let form = document.querySelector(`#${formId}`); // select form
+let formElements = form.elements; // get the elements in the form
+/**
+ * This function gets the values in the form
+ * and returns them as an object with the
+ * [formIdentifier] as the object key
+ * @returns {Object}
+ */
+const getFormData = () => {
+  let data = { [formIdentifier]: {} };
+  for (const element of formElements) {
+    if (element.name.length > 0) {
+      data[formIdentifier][element.name] = element.value;
+    }
+  }
+  return data;
+};
+saveButton.onclick = event => {
+  event.preventDefault();
+  data = getFormData();
+  localStorage.setItem(formIdentifier, JSON.stringify(data[formIdentifier]));
+  const message = "Form draft has been saved!";
+  displayAlert(message);
+};
+/**
+ * This function displays a message
+ * on the page for 1 second
+ *
+ * @param {String} message
+ */
+const displayAlert = message => {
+  alertBox.innerText = message;
+  alertBox.style.display = "block";
+  setTimeout(function() {
+    alertBox.style.display = "none";
+  }, 1000);
+};
+/**
+ * This function populates the form
+ * with data from localStorage
+ *
+ */
+const populateForm = () => {
+  if (localStorage.key(formIdentifier)) {
+    const savedData = JSON.parse(localStorage.getItem(formIdentifier)); // get and parse the saved data from localStorage
+    for (const element of formElements) {
+      if (element.name in savedData) {
+        element.value = savedData[element.name];
+      }
+    }
+    const message = "Form has been refilled with saved data!";
+    displayAlert(message);
+  }
+};
 
 // Search Results Zomato API
 
@@ -200,34 +213,3 @@ var userCuisineChoice = [];
 
     $("#btnSearch").on("click", userCuisineSearch)
 ;
-
-
-
-  // Storing our giphy API URL for a random cat image
-  // var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=cats";
-
-  // // Perfoming an AJAX GET request to our queryURL
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET"
-  // })
-
-  // // After the data from the AJAX request comes back
-  //   .then(function(response) {
-
-  //   // Saving the image_original_url property
-  //     var imageUrl = response.data.image_original_url;
-
-  //     // Creating and storing an image tag
-  //     var catImage = $("<img>");
-
-  //     // Setting the catImage src attribute to imageUrl
-  //     catImage.attr("src", imageUrl);
-  //     catImage.attr("alt", "cat image");
-
-  //     // Prepending the catImage to the images div
-  //     $("#images").prepend(catImage);
-
-      // show response in HTML
-
-// });

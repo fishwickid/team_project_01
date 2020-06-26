@@ -217,7 +217,16 @@ textarea {
   box-shadow: 0px 0px 2px 0px #212020;
 }
 
-#btnSearch, #barbequeButton, #burgerButton, #chineseButton, #friedFoodButton, #indianButton, #italianButton, #pizzaButton, #sushiButton, #thaiButton, #redButton, #whiteButton { 
+#btnSearch {
+  background: url(/Assets/Press-Button-.png) no-repeat;
+  cursor:pointer;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  margin: auto;
+}
+
+#barbequeButton, #burgerButton, #chineseButton, #friedFoodButton, #indianButton, #italianButton, #pizzaButton, #sushiButton, #thaiButton, #redButton, #whiteButton { 
   background-color: salmon;
   margin-bottom: 10px;
   padding-top: 10px;
