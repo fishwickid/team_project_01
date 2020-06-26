@@ -9,7 +9,7 @@ function startQuiz() {
   document.getElementById("quiz").style.display = "block";
   console.log("quiz started");
   document.getElementById("wineQuestion").html = "hello";
-  $("#wineQuestion").html("<p>What type of wine are you in the mood for  "+ userName.val() +"</p>");
+  $("#wineQuestion").html("<p>What type of wine are you in the mood for  " + userName.val() + "</p>");
   renderQuestion();
 };
 
@@ -63,12 +63,12 @@ function renderQuestion() {
   $("#redButton").on("click", function () {
     $("#displayWine").html("<p>with red wine</p>")
     document.getElementById("btnSearch").style.display = "block";
-    
+
   });
   $("#whiteButton").on("click", function () {
     $("#displayWine").html("<p>with white wine</p>");
     document.getElementById("btnSearch").style.display = "block";
-    
+
   });
 };
 
@@ -112,7 +112,7 @@ saveButton.onclick = event => {
 const displayAlert = message => {
   alertBox.innerText = message;
   alertBox.style.display = "block";
-  setTimeout(function() {
+  setTimeout(function () {
     alertBox.style.display = "none";
   }, 1000);
 };
@@ -136,80 +136,125 @@ const populateForm = () => {
 
 // Search Results Zomato API
 
+const userCuisineChoiceToCuisineIdsMapping = [
+  { cuisineName: "italian", cuisineIds: "55,82" },
+  { cuisineName: "burgers", cuisineIds: "168" },
+  { cuisineName: "chinese", cuisineIds: "3,121,25,69,831,128,119,99" },
+  { cuisineName: "fried food", cuisineIds: "1" },
+  { cuisineName: "indian", cuisineIds: "148,117,50" },
+  { cuisineName: "pizza", cuisineIds: "82" },
+  { cuisineName: "sushi", cuisineIds: "60,177" },
+  { cuisineName: "thai", cuisineIds: "95,99" },
+]
+
+userCuisineChoiceToCuisineIdsMapping.forEach(element => {
+  var option = document.createElement('option')
+  option.textContent = element.cuisineName;
+  document.getElementById('cuisine-ID').appendChild(option);
+})
+
 var userCuisineChoice = [];
-    function getCuisineId(userCuisineChoice) {
+function getCuisineId(userCuisineChoice) {
 
-        const userCuisineChoiceToCuisineIdsMapping = [
-            { cuisineName: "italian", cuisineIds: "55,82" },
-            { cuisineName: "burgers", cuisineIds: "168" },
-            { cuisineName: "chinese", cuisineIds: "3,121,25,69,831,128,119,99" },
-            { cuisineName: "fried food", cuisineIds: "1" },
-            { cuisineName: "indian", cuisineIds: "148,117,50" },
-            { cuisineName: "pizza", cuisineIds: "82" },
-            { cuisineName: "sushi", cuisineIds: "60,177" },
-            { cuisineName: "thai", cuisineIds: "95,99" },
-        ]
-        const matchingCuisines = userCuisineChoiceToCuisineIdsMapping.filter(cuisineMapping => {
-            return cuisineMapping.cuisineName === userCuisineChoice.trim().toLowerCase()
 
-        });
+  const matchingCuisines = userCuisineChoiceToCuisineIdsMapping.filter(cuisineMapping => {
+    return cuisineMapping.cuisineName === userCuisineChoice.trim().toLowerCase()
 
-        if (matchingCuisines.length > 0) {
-            return matchingCuisines[0].cuisineIds;
-        }
-        else {
-            //TODO (Sukey): add a div for error messages
-        }
+  });
 
+  if (matchingCuisines.length > 0) {
+    return matchingCuisines[0].cuisineIds;
+  }
+  else {
+    //TODO (Sukey): add a div for error messages
+  }
+
+}
+
+function createEntry(data, ind) {
+  let elementId = `restaurant-${ind}`
+  let html = `
+  <div class="col-lg-4 col-12 mb-2 mb-lg-0">
+    <div id="${elementId}" class="card">
+      ${data.thumb && `<img class="card-img-top" src="${data.thumb}" alt="${data.name} image" style="max-height: 120px; object-fit:cover"/>`}
+      <div class="card-body">
+        <h5 class="card-title city-data" id="city-name">${data.name}</h3>
+        <p class="card-text city-data" id="city-address"><strong>Address:</strong> ${data.location.address}</p>
+        <p class="card-text city-data" id="city-phone-number"><strong>Phone Number:</strong> ${data.phone_numbers}</p>
+        <p class="card-text city-data" id="city-opening-hours"><strong>Opening Hours:</strong> ${data.timings}</p>
+        <a href="${data.url}" class="card-link">View Restaurant</a>
+      </div>
+    </div>
+  </div>
+  `
+  $('#recommended-restaurants').append(html);
+}
+
+function userCuisineSearch() {
+  console.log('test');
+  event.preventDefault();
+
+  userCuisineChoice = ($("#cuisine-ID").val());
+
+  const selectedCuisineIds = getCuisineId(userCuisineChoice);
+
+  if (selectedCuisineIds !== undefined) {
+
+    var requestUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=296&entity_type=city&q=BYO&cuisines=" + selectedCuisineIds;
+    var headers = {
+      "Accept": 'application/json',
+      "user-key": "b83a37834a49f80599c5c0c7e56a4977"
     }
+    $.ajax({
+      url: requestUrl,
+      headers: headers,
+      complete: function (response) {
+        $('#output').html(response.responseText);
+        // console.log(requestUrl);
+        // console.log(response.responseJSON);
+        // console.log(response.responseJSON.restaurants[0]);
+        // console.log(response.responseJSON.restaurants[0].restaurant.name);
+        // console.log(response.responseJSON.restaurants[0].restaurant.phone_numbers);
+        // console.log(response.responseJSON.restaurants[0].restaurant.location.address);
+        // console.log(response.responseJSON.restaurants[0].restaurant.timings);
 
-    function userCuisineSearch() {
-        event.preventDefault();
+        // also declare j = 1
+        // this lets you use i to go through everything starting from the start, and use j to give them a unique number for id
+        for (var i = 0, j = 1; i < response.responseJSON.restaurants.length; i++) {
 
-        userCuisineChoice = ($("#cuisine-ID").val());
+          //shorter name to use!
+          let data = response.responseJSON.restaurants[i].restaurant;
 
-        const selectedCuisineIds = getCuisineId(userCuisineChoice);
+          // put all this into a bootstrap card
+          // give each card an id, don't really need to give all the divs inside an id
+          let card = $('<div/>').addClass('card').attr('id', 'restaurant-' + j);
 
-        if (selectedCuisineIds !== undefined) {
+          let cityName = $('<div>' + data.name + '</div>').addClass('city-data');
+          let cityPhoneNumber = $('<div>' + data.phone_numbers + '</div>').addClass('city-data');
+          let cityAddress = $('<div>' + data.location.address + '</div>').addClass('city-data');
+          let cityOpeningHours = $('<div>' + data.timings + '</div>').addClass('city-data');
 
-            var requestUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=296&entity_type=city&q=BYO&cuisines=" + selectedCuisineIds;
-            var headers = {
-                "Accept": 'application/json',
-                "user-key": "b83a37834a49f80599c5c0c7e56a4977"
-            }
-            $.ajax({
-                url: requestUrl,
-                headers: headers,
-                complete: function (response) {
-                    $('#output').html(response.responseText);
-                    console.log(requestUrl);
-                    console.log(response.responseJSON);
-                    console.log(response.responseJSON.restaurants[0]);
-                    console.log(response.responseJSON.restaurants[0].restaurant.name);
-                    console.log(response.responseJSON.restaurants[0].restaurant.phone_numbers);
-                    console.log(response.responseJSON.restaurants[0].restaurant.location.address);
-                    console.log(response.responseJSON.restaurants[0].restaurant.timings);
+          // add these into the card
+          card.append(cityName, cityPhoneNumber, cityAddress, cityOpeningHours)
 
-                    const dataResults = response.responseJSON.restaurants[0].restaurant;
-                    const cityName = dataResults.name;
-                    const cityPhoneNumber = dataResults.phone_numbers;
-                    const cityAddress = dataResults.location.address;
-                    const cityOpeningHours = dataResults.timings;
+          // add the card to the container
+          $('#recommended-restaurants').append(card);
 
-                    $("#city-name").text(cityName)
-                    $("#city-address").text("Address:" + cityAddress)
-                    $("#city-phone-number").text("Phone Number: " + cityPhoneNumber)
-                    $("#city-opening-hours").text("Opening Hours: " + cityOpeningHours)
+          //increment j at the end
+          j++
 
-                },
-                error: function () {
-                    $('#output').html('Bummer: there was an error!');
-                },
-
-            });
         }
+      },
+      error: function () {
+        $('#output').html('Bummer: there was an error!');
+      },
 
-    }
 
-    $("#btnSearch").on("click", userCuisineSearch)
-;
+    });
+
+
+  }
+
+}
+
+$("#btnSearch").on("click", userCuisineSearch)
