@@ -1,81 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wine2Dine</title>
-​
-<link rel ="stylesheet" href="style.css">
-​
-​
-<!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-​
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-​
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wine2Dine</title>
+  ​
+  <link rel="stylesheet" href="style.css">
+  ​
+  ​
+  <!-- Compressed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  ​
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  ​
 </head>
+
 <body>
-​
-<!--  Nav Bar -->
-<h1 id="headerText">WINE2DINE</h1>
-<h3 id="subHeader">An easier and cheaper way to wine and dine</h3>
-<div id="signUp"><p>SIGN UP TO SAVE YOUR SEARCH</p></div>
-<!-- The Wine Quiz -->
-<div id="divQuiz">
-<div id="intro">
-  <p>Take the quiz and see what wine best suits your evening</p>
-</div>
-<div >START QUIZ</div>
-​
-<div class= "container" id="nameForm"> 
-​
-  <div class="row">
-    <div class="columns small-8"></div>
-​
-    <form id="save-later-form">
-      <h3>Register your details</h3>
-      <label for="full-name">Full Name</label>
-      <input type="text" name="full-name" id="full-name" />
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" />
-      <label for="phone">Phone Number</label>
-      <input type="tel" name="phone" id="phone" maxlength="11" />
-      <label for="dob">Date Of Birth</label>
-      <input type="date" name="dob" id="dob" />
-      <button type="submit"  id="start">SAVE & Start our Quiz</button>
-    </form>
+  ​
+  <!--  Nav Bar -->
+  <h1 id="headerText">WINE2DINE</h1>
+  <h3 id="subHeader">An easier and cheaper way to wine and dine</h3>
+  <div id="signUp">
+    <p>SIGN UP TO SAVE YOUR SEARCH</p>
   </div>
-</div> 
-         
-​
-<a class="button small large-expanded"  id="start" href="#">START QUIZ</a>
+
+
+  <!-- Black Background Area for input form -->
+  <div id="divQuiz">
+    <div id="intro">
+      <p>Take the quiz and see what wine best suits your evening</p>
+    </div>
+
+
+    <!-- Questions buttons -->
+    ​
+    <div class="container" id="nameForm">
+      ​
+      <div class="row">
+        <div class="columns small-8"></div>
+        ​
+        <form id="save-later-form">
+          <h3>Register your details</h3>
+          <label for="full-name">Full Name</label>
+          <input type="text" name="full-name" id="full-name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" maxlength="11" />
+          <label for="dob">Date Of Birth</label>
+          <input type="date" name="dob" id="dob" />
+          <button type="submit" id="start">SAVE & Start our Quiz</button>
+        </form>
+      </div>
+    </div>
+
+    ​
+    <!-- <a class="button small large-expanded"  id="start" href="#">START QUIZ</a> -->
+  </div>
+  <div id="quiz" style="display: none;">
+
+    <!-- Buttons -->
+    <div id="foodButtons"></div>
+
+    <p id="wineQuestion">What kind of food are you in the mood for?</p>
+
+    <a class="button small large-down-expanded" id="barbequeButton">Barbecue</a>
+    <a class="button small large-down-expanded" id="burgerButton">Burgers</a>
+    <a class="button small large-down-expanded" id="chineseButton">Chinese</a>
+    <a class="button small large-down-expanded" id="friedFoodButton">Fried Food</a>
+    <a class="button small large-down-expanded" id="indianButton">Indian</a>
+    <a class="button small large-down-expanded" id="italianButton">Italian</a>
+    <a class="button small large-down-expanded" id="pizzaButton">Pizza</a>
+    <a class="button small large-down-expanded" id="sushiButton">Sushi</a>
+    <a class="button small large-down-expanded" id="thaiButton">Thai</a>
+
+    <div id="wineButtons"></div>
+
+    <p>What type of wine do you prefer?</p>
+
+    <a class="button small large-down-expanded" id="redButton">Red</a>
+    <a class="button small large-down-expanded" id="whiteButton">White</a>
+
+
+    <!-- Show images -->
+
+    <div id="images">
+    </div>
+
+    <!-- Show Choice -->
+
+    <div id="scoreContainer">
+      <div id="displayFood"></div>
+      <div id="displayWine"></div>
+    </div>
+   
+
+    <!-- Display restaurant results -->
+    ​
+    <div id="search-recommended-restaurants">
+      <input type="text" class="form-control" id="cuisine-ID" style="display: none;">
+  </div>
+  ​<button type="submit" id="btnSearch" style="display: none;">Want Your Wine2Dine? Click Here</button>
+
+  </div>
+<div id="view-restaurants">
+  <h3 class="city-data" id="city-name"></h3>
+  <div class="city-data" id="city-address"></div>
+  <div class="city-data" id="city-phone-number"></div>
+  <div class="city-data" id="city-opening-hours"></div>
 </div>
-<div id="quiz" style="display: none">
-  <div id="question"></div>
-  <div id="choices">
-    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
-    <div class="choice" id="D" onclick="checkAnswer('D')"></div>
-    <div class="choice" id="A" onclick="checkAnswer('E')"></div>
-    <div class="choice" id="B" onclick="checkAnswer('F')"></div>
-    <div class="choice" id="C" onclick="checkAnswer('G')"></div>
-    <div class="choice" id="D" onclick="checkAnswer('H')"></div>
-    <div class="choice" id="A" onclick="checkAnswer('I')"></div>
-    <div class="choice" id="B" onclick="checkAnswer('J')"></div>
-    <div class="choice" id="C" onclick="checkAnswer('K')"></div>
-    <div class="choice" id="D" onclick="checkAnswer('L')"></div>
-   </div>
-  <div id="scoreContainer" style="display: none">
-    <div id="answerDisplay"></div>
-​
- 
-<!-- Compressed JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-​
-​
-<script src="script.js"></script>
-<script src="script01.js"></script>
-    
+</div>
+
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    ​
+    ​
+    <!-- <script src="script.js"></script> -->
+    <script src="script03.js"></script>
+
 </body>
+
 </html>

@@ -5,13 +5,13 @@
 *:after {
   box-sizing: border-box;
 }
-body {
+/* body {
   background-color: brown;
   font-family: "Nunito", sans-serif;
-}
-h3,
+} */
+/* h3,
 label {
-  text-transform: uppercase;
+  text-transform: uppercase; */
 }
 .alert {
   width: 80vw;
@@ -160,8 +160,7 @@ textarea {
 }
 #quiz {
   margin-top: 50px;
-  margin-bottom: 50px;
-  text-align: center;    
+  margin-bottom: 50px; 
   background-image:url(https://46gyn61z4i0t1u1pnq2bbk2e-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/adult-bar-blur-696218-768x512.jpg);
   background-size:cover;
   text-align: center;
@@ -217,6 +216,37 @@ textarea {
   margin-right: 6rem;
   box-shadow: 0px 0px 2px 0px #212020;
 }
+
+#btnSearch, #barbequeButton, #burgerButton, #chineseButton, #friedFoodButton, #indianButton, #italianButton, #pizzaButton, #sushiButton, #thaiButton, #redButton, #whiteButton { 
+  background-color: salmon;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+  text-align: center;
+}
+
+#search-recommended-restaurants {
+  display: inline-flex;
+  text-align: center;
+  color: white;
+}
+
+#foodButtons {
+  text-align: center;
+}
+
+#view-restaurants {
+
+}
+
+#wineButtons {
+  margin-top: 30px;
+}
+
 .choice:hover{
   border : 2px solid rgb(46, 143, 134);
   font-weight: bold;
@@ -233,20 +263,17 @@ textarea {
 }
 #scoreContainer{
   margin-top: 50px;
-  background-color: white;
-  opacity: 0.8;
+  font-size: 20px;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   width : 100%;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px 0px;
 }
 #startForm {
   max-width: 60%;
   align-content: center;
   color: white;
 }
-#scoreContainer p{
+/* #scoreContainer p{
   margin-top: 30px;
   font-size: 3em;
   font-weight: bold;
@@ -256,7 +283,7 @@ textarea {
   font-weight: bold;
   text-align: left;
   margin-left: 20px;
-  margin-top: 40px;
+  margin-top: 40px; */
 }
 #saveInitial {
   color: rgb(255, 255, 255);

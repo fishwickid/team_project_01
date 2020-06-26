@@ -3,7 +3,7 @@
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
 const divQuiz = document.getElementById("divQuiz");
-const question = document.getElementById("question");
+const question = document.getElementById("question1");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
@@ -38,7 +38,9 @@ let questions = [
         choiceJ : "Sushi",
         choiceK : "Thai",
         choiceL : "Wings",
-    }
+        Correct : "A",
+    },
+
 ];
 
 // create some variables
@@ -51,8 +53,9 @@ let score = 0;
 
 // render a question
 function renderQuestion(){
-    let q = questions[runningQuestion];
+    let q = questions[runningQuestion]; {
     question.innerHTML = "<p>"+ q.question +"</p>";
+    }
     
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
@@ -69,6 +72,10 @@ function renderQuestion(){
     
 }
 
+// function removeUndefined() {
+     
+// }
+
 // add listener to start button
 start.addEventListener("click",startQuiz);
 
@@ -80,6 +87,13 @@ function startQuiz(){
     divQuiz.style.display = "none";
     renderQuestion();
     quiz.style.display = "block";
+}
+
+// render progress
+function renderProgress(){
+    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+    }
 }
     
 const wineRecommendations = {
@@ -97,14 +111,47 @@ const wineRecommendations = {
 }   
 
 
+// check Anwer
+
 function checkAnswer(answer){
-    console.log(answer)
     // answer is correct
-    if( answer === choiceA){
-        console.log("You chose choice A")
+    if( answer === questions[runningQuestion].choiceA){
+        console.log(wineRecommendations.barbeque);
+        answerIsCorrect();
+    }
+     // answer is wrong
+    else {
+        answerIsWrong();
+    }
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else{
+        // end the quiz and show the score
+       // clearInterval(TIMER);
+        scoreRender();
     }
 }
 
+// answer is correct
+function answerIsCorrect(){
+    console.log("That's Correct");
+}
+
+// answer is Wrong
+function answerIsWrong(){
+    confirm("Sorry, that's incorrect");
+}
+
+// score render
+function scoreRender(){
+    document.getElementById('count').innerHTML= "You're Done!";
+    clearInterval(interval);
+    scoreDiv.style.display = "block";
+    question.style.display = "none";
+    choices.style.display = "none";
+    answerDisplay.innerHTML += "<p>You Scored "+ score +"/5</p>";
+}
 // Adding your score to the tally
 
 var todoInput = document.querySelector("#user-text");
