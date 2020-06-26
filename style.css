@@ -1,20 +1,394 @@
+/* form.css */
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+/* body {
+  background-color: brown;
+  font-family: "Nunito", sans-serif;
+} */
+/* h3,
+label {
+  text-transform: uppercase; */
+}
+.alert {
+  width: 80vw;
+  margin: 2rem auto;
+  background-color: #D4EDDA;
+  color: #155724;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  display: none;
+}
+#save-later-form {
+  position: relative;
+  width: 80vw;
+  margin: 3rem auto;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+}
+label {
+  margin: 1rem 0 0;
+  display: block;
+}
+input {
+  font-size: 0.875em;
+  width: 100%;
+  height: 40px;
+  padding: 0px 15px 0px 15px;
+  background: whitesmoke;
+  outline: none;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+}
+input:hover {
+  background: whitesmoke;
+  color: black;
+}
+button[type="submit"] {
+  background-color: #349BAB;
+  width: calc((100% / 2) - 3px);
+  display: inline-block;
+  color: white;
+  font-weight: 600;
+  height: 2.8rem;
+  border: none;
+  font-family: Nunito;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+#save {
+  background-color: #30383F;
+}
+select {
+  width: 100%;
+  height: 40px;
+  background: whitesmoke;
+  border: none;
+  padding: 0 0 0 0.5rem;
+  outline: none;
+}
+select:focus,
+input:focus,
+textarea:focus {
+  outline: #349BAB solid 1px;
+}
+textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 110px;
+  max-height: 110px;
+  padding: 15px;
+  margin: 0 0 1rem 0;
+  background: whitesmoke;
+  outline: none;
+  color: black;
+  font-size: 0.875em;
+  border: none;
+}
+/* ========MEDIA QUERIES======== */
+@media screen and (min-width: 768px) {
+  #save-later-form,
+  .alert {
+    width: 60vw;
+  }
+}
+@media screen and (min-width: 992px) {
+  #save-later-form,
+  .alert {
+    width: 40vw;
+  }
+}
+/* layout code */
+#headerText {
+  font-size:  60px;
+  margin-top: 50px;
+  letter-spacing: 6px;
+  font-weight: 900;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#subHeader {
+  font-size: 16px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#intro {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 120px;
+}
+#signUp {
+  color: white;
+  background-color: salmon;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: -20px;
+  padding-top: 10px;
+  padding-bottom: 1px;
+}
+#start{
+  color: white;
+  background-color: salmon;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin-left: 6rem;
+  margin-top: 20px;
+  margin-right: 6rem;
+  box-shadow: 0px 0px 5px 0px #212020;
+}
+#divQuiz {
+  text-align: center;
+  background-image:url(https://46gyn61z4i0t1u1pnq2bbk2e-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/adult-bar-blur-696218-768x512.jpg);
+  background-size:cover;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: black 1px 1px;
+  padding-top: 50px;
+  padding-bottom: 160px;
+  box-shadow:inset 0 0 0 2000px rgba(36, 29, 28, 0.851);
+  margin-top: 20px;
+}
+#quiz {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-image:url(https://46gyn61z4i0t1u1pnq2bbk2e-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/adult-bar-blur-696218-768x512.jpg);
+  background-size:cover;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: black 1px 1px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  margin-bottom: 40px;
+  box-shadow:inset 0 0 0 2000px rgba(36, 29, 28, 0.851);
+  margin-top: 20px;
+}
+#start:hover{
+  border: 3px solid lightseagreen;
+  color : lightseagreen;
+}
+#inputForm {
+  margin-top: 3rem;
+  color: rgb(77, 17, 162);
+  text-align: center;
+  padding-top: 50px;
+}
+#seconds {
+  display: flex;
+  margin-top: -100px;
+}
+#question{
+  position: relative;
+  /* margin-top: 5rem; */
+  text-align: center;
+  font-weight: bold;
+  margin : 0;
+  padding : 2x;
+  font-size: 1.2em;
+}
+#choices{
+  width : auto;
+  margin: auto;
+  right : 0;
+  padding : 10px
+}
+.choice{
+  color: white;
+  background-color: salmon;
+  position: relative;
+  margin-bottom: 5px;
+  display: flex;
+  width: auto;
+  text-align: center;
+  border-radius: 5px;
+  padding : 5px;
+  text-align: center;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  box-shadow: 0px 0px 2px 0px #212020;
+}
+#barbequeButton, #burgerButton, #chineseButton, #friedFoodButton, #indianButton, #italianButton, #pizzaButton, #sushiButton, #thaiButton, #redButton, #whiteButton {
+  background-color: salmon;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+  text-align: center;
+}
+#foodButtons {
+  text-align: center;
+}
+#wineButtons {
+  margin-top: 30px;
+}
+button {
+  color: white;
+  background-color: salmon;
+  font-size: 50px;
+  position: relative;
+  margin-bottom: 5px;
+  display: flex;
+  width: auto;
+  text-align: center;
+  border-radius: 5px;
+  padding : 5px;
+  text-align: center;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  box-shadow: 0px 0px 2px 0px #212020;
+}
+.choice:hover{
+  border : 2px solid rgb(46, 143, 134);
+  font-weight: bold;
+}
+/* end register Css */
+#floatingTimer {
+  padding-top: 20px;
+  padding-left: 30px;
+  align-items: baseline;
+}
+#finishText {
+  text-align: center;
+  padding-top: 50px;
+}
+#scoreContainer{
+  margin-top: 50px;
+  font-size: 20px;
+  height: auto;
+  margin-bottom: 10px;
+  width : 100%;
+}
+#startForm {
+  max-width: 60%;
+  align-content: center;
+  color: white;
+}
+/* #scoreContainer p{
+  margin-top: 30px;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+}
+#scoreContainer h4{
+  font-weight: bold;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 40px; */
+}
+#saveInitial {
+  color: rgb(255, 255, 255);
+  background-color: purple;
+  text-align: center;
+}
+#user-form {
+  position: static;
+  margin-top: 50px;
+  top:50px;
+  left:325px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+#user-count {
+  position: static;
+  margin-top: 30px;
+  top:50px;
+  left:325px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+}
+#user-list {
+  position: static;
+  margin-top: 30px;
+  top:50px;
+  left:325px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* weather */
+
+body {
+  font-size: 16px;
+  font-family: Tahoma;
+  background-color: thistle;
+}
+li { 
+  list-style-type: none;
+}
 h4 {
-    text-align: center;
+  font-weight: bold;
+  padding-top: 40px;
+  text-align: center;
+  color: steelblue;
 }
 
-.top-bar {
+.jumbotron {
 
-    background-color: brown;
-    color: brown;
+  color: rgb(212, 216, 231);
+  text-align: center;
+  align-items: center;
+  background-image: url('../Assets/Images/background.jpg');
+
 }
 
-.media-object-section {
+.col-sm{
+background-image: url(../Assets/Images/back1.jpg);
+text-align: center;
+font-size: medium;
 
-    text-align: center;
 }
 
-.quizzP {
+#city-date1, #city-date2,#city-date3,#city-date4,#city-date5 {
 
-    color: brown;
-    text-align: center;
+  background-color: royalblue;
+  color: seashell;
+
 }
+
+#btnSearch {
+  background-color: #017A91;
+  color: white;
+}
+#clear-all {
+  background-color: #017A91;
+  color: white;
+}
+#five-day-forecast {
+  padding-top: 80px;
+}
+.uvGreen {
+  background-color: green;
+  color: black;
+}
+.uvYellow {
+  background-color: yellow;
+  color: black;
+}
+.uvOrange {
+  background-color: orange;
+  color: black;
+}
+.uvRed {
+  background-color: red;
+  color: black;
+}
+.uvPurple {
+  background-color: purple;
+  color: white;
+}
+

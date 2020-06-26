@@ -1,106 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wine2Dine</title>
-
-    <!-- Compressed CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-
-<link rel ="stylesheet" href="style.css">
-
-<!-- Compressed JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wine2Dine</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Compressed CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">Wine 2 Dine</li>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li><a href="news.html">Wine News</a></li>
-        <li><a href="quiz.html">Help us pick your wine</a></li>
-      </ul>
-    </div>
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li><input type="search" placeholder="Search a wine"></li>
-        <li><button type="button" class="button">GO</button></li>
-      </ul>
-    </div>
+  <!--  Nav Bar -->
+  <h1 id="headerText">WINE2DINE</h1>
+  <h3 id="subHeader">An easier and cheaper way to wine and dine</h3>
+  <div id="signUp">
+    <p>SIGN UP TO SAVE YOUR SEARCH</p>
   </div>
-
-  <div class="media-object">
-    <div class="media-object-section middle">
-      <div class="thumbnail">
-        <img src= "./Assets/picture1.jpg">
+  <!-- Black Background Area for input form -->
+  <div id="divQuiz">
+    <div id="intro">
+      <p>Take the quiz and see what wine best suits your evening</p>
+    </div>
+    <!-- Questions buttons -->
+    <div class="container" id="nameForm">
+      <div class="row">
+        <div class="columns small-8"></div>
+        <form id="save-later-form">
+          <h3>Register your details</h3>
+          <label for="full-name">Full Name</label>
+          <input type="text" name="full-name" id="full-name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" maxlength="11" />
+          <label for="dob">Date Of Birth</label>
+          <input type="date" name="dob" id="dob" />
+          <button type="submit" id="start">SAVE & Start our Quiz</button>
+        </form>
       </div>
     </div>
-    <div class="media-object-section">
-      <h4>USER STORY</h4>
-      <p>So, once we've made the plant, how do we go out? Hope you have something more elegant in mind than shooting me in the head? A kick. What's a kick? This, Ariadne, would be a kick.</p>
-      <p>What is the most resilient parasite? Bacteria? A virus? An intestinal worm? An idea. Resilient... highly contagious. Once an idea has taken hold of the brain it's almost impossible to eradicate. An idea that is fully formed - fully understood - that sticks; right in there somewhere.</p>
-    </div>
-    <div class="media-object-section bottom">
-      <div class="thumbnail">
-        <img src= "./Assets/picture2.jpg">
-      </div>
-    </div>
+    <!-- <a class="button small large-expanded"  id="start" href="#">START QUIZ</a> -->
   </div>
-
-
-  <div class="grid-container">
-    <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-      <div class="cell">
-        <div class="card">
-          <img src="Assets/top.jpg">
-          <div class="card-section">
-          <h4>Top wines</h4>
-          <p>1st wine</p>
-          <p>2nd wine</p>
-          <p>3rd wine</p>
-          <p>4th wine</p>
-          <p>5th wine</p>
-          </div>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="card">
-          <img src="assets/location.JPG">
-          <div class="card-section">
-            <h4>Find nearest bottleshop</h4>
-            <p> LOCATION API WILL GO HERE</p>
-          </div>
-        </div>
-      </div>
-      <div class="cell">
-        <div class="card">
-          <img src="Assets/review.jpg">
-          <div class="card-section">
-            <h4>Customer reviews</h4>
-            <p>1st review</p>
-            <p>2nd review</p>
-            <p>3rd review</p>
-            <p>4th review</p>
-            <p>5th review</p>
-          </div>
-        </div>
-      </div>
+  <div id="quiz" style="display: none;">
+    <!-- Buttons -->
+    <div id="foodButtons"></div>
+    <p>What kind of food are you in the mood for?</p>
+    <a class="button small large-down-expanded" id="barbequeButton">Barbecue</a>
+    <a class="button small large-down-expanded" id="burgerButton">Burgers</a>
+    <a class="button small large-down-expanded" id="chineseButton">Chinese</a>
+    <a class="button small large-down-expanded" id="friedFoodButton">Fried Food</a>
+    <a class="button small large-down-expanded" id="indianButton">Indian</a>
+    <a class="button small large-down-expanded" id="italianButton">Italian</a>
+    <a class="button small large-down-expanded" id="pizzaButton">Pizza</a>
+    <a class="button small large-down-expanded" id="sushiButton">Sushi</a>
+    <a class="button small large-down-expanded" id="thaiButton">Thai</a>
+    <div id="wineButtons"></div>
+    <p>What type of wine do you prefer?</p>
+    <a class="button small large-down-expanded" id="redButton">Red</a>
+    <a class="button small large-down-expanded" id="whiteButton">White</a>
+    <!-- Show images -->
+    <div id="images">
     </div>
-  </div>
-  
-
-
-
-
-        <!-- Compressed JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-
-<script src="script.js"></script>
-    
+    <!-- Show Choice -->
+    <div id="scoreContainer">
+      <div id="displayFood"></div>
+      <div id="displayWine"></div>
+    </div>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="script.js"></script>
 </body>
 </html>
