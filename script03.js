@@ -242,53 +242,11 @@ function userCuisineSearch() {
       },
 
 
-       $("#btnSearch").on("click", userCuisineSearch)
-      // ;
-
-      // Weather Display API
-
-      // query URL and custom API KEY variable for current day weather 
-
-      // $(document).ready()
-
-      // // Function to start user has typed their city in to the search bar
-
-      // function citySearch() {
-
-      //     event.preventDefault();
-      //     $(".uvIndex").empty();
-
-
-      //     var currentSearchCity = ($("#current-search-city").val());
-
-      //     // query URL and custom API KEY variable for current day weather 
-      //     const requestURL = "https://api.openweathermap.org/data/2.5/weather?q=perth&units=metric&appid=82c89536a936fdf2b3461ac6bec2669f";
-
-      //     //ajax "get" method for the JSON object
-      //     $.get({
-      //         url: queryURL,
-      //     }).then(function (response) {
-
-      //     // apply cont variables to the data collected from the API
-      //         const cityName = response.name;
-      //         const cityTemp = response.main.temp;
-      //         const cityHumidity = response.main.humidity;
-      //         const cityWindSpeed = response.wind.speed;
-      //         const cityIcon = response.weather[0].icon;
-
-      //     // assign fetched data to HTML id
-      //         $("#city-date").text(moment().format('MMMM Do YYYY'))
-      //         $("#city-name").text(cityName)
-      //         $("#city-icon").attr("src", "https://openweathermap.org/img/w/" + cityIcon + ".png")
-      //         $("#city-temp").text("Temperature:" + cityTemp.toFixed(1) + "°C")
-      //         $("#city-humidity").text("Humidity: " + cityHumidity + "%")
-      //         $("#city-wind").text("Wind Speed: " + cityWindSpeed.toFixed(2) + "KPH")
-      //         ;
     });
 
 
   }
 
-  // }
+}
 
-  $("#btnSearch").on("click", userCuisineSearch)
+$("#btnSearch").on("click", userCuisineSearch)
