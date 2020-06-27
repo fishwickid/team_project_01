@@ -250,3 +250,19 @@ function userCuisineSearch() {
 }
 
 $("#btnSearch").on("click", userCuisineSearch)
+
+event.preventDefault();
+      // query URL and custom API KEY variable for current day weather 
+      const requestURL = "https://api.openweathermap.org/data/2.5/weather?q=perth&units=metric&appid=82c89536a936fdf2b3461ac6bec2669f";
+      //ajax "get" method for the JSON object
+      $.get({
+        url: queryURL,
+      }).then(function (response) {
+        // apply cont variables to the data collected from the API
+        const cityTemp = response.main.temp;
+        const cityIcon = response.weather[0].icon;
+        // assign fetched data to HTML id
+        $("#weather-city-icon").attr("src", "https://openweathermap.org/img/w/" + cityIcon + ".png")
+        $("#weather-city-temp").text("Temperature:" + cityTemp.toFixed(1) + "°C")
+          ;
+      });

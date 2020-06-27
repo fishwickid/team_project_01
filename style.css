@@ -132,6 +132,18 @@ textarea {
   padding-top: 10px;
   padding-bottom: 1px;
 }
+
+#recommended-restaurants {
+  font-size:20px;
+  background-color: black;
+  text-align: justify;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #start{
   color: white;
   background-color: salmon;
