@@ -132,6 +132,18 @@ textarea {
   padding-top: 10px;
   padding-bottom: 1px;
 }
+
+#recommended-restaurants {
+  font-size:20px;
+  background-color: black;
+  text-align: justify;
+  color: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #start{
   color: white;
   background-color: salmon;
@@ -194,10 +206,18 @@ textarea {
 #btnSearch {
   background: url("/Assets/Press-Button-.png");
   cursor:pointer;
-  width: 250px;
-  height: 250px;
   text-align: center;
   margin: auto;
+  margin-top: 50px;
+  background-color: salmon;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 2px;
+  text-align: center;
 }
 
 #barbequeButton, #burgerButton, #chineseButton, #friedFoodButton, #indianButton, #italianButton, #pizzaButton, #sushiButton, #thaiButton, #redButton, #whiteButton { 
