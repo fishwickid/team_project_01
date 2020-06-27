@@ -250,6 +250,7 @@ function userCuisineSearch() {
 }
 
 $("#btnSearch").on("click", userCuisineSearch)
+$("#cuisine-ID").empty();
 
 event.preventDefault();
       // query URL and custom API KEY variable for current day weather 
